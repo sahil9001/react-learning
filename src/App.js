@@ -1,6 +1,4 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Body from "./components/Body";
 import Counter from "./components/Counter";
 import Header from "./components/Header";
 import { Component } from "react";
