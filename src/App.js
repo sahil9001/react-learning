@@ -1,12 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Body from "./components/Body";
+import Counter from "./components/Counter";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Body title="test title" />
+        <Counter />
         <a
           className="App-link"
           href="https://reactjs.org"
