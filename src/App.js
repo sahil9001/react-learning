@@ -2,24 +2,45 @@ import logo from "./logo.svg";
 import "./App.css";
 import Body from "./components/Body";
 import Counter from "./components/Counter";
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Body title="test title" />
-        <Counter />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from "./components/Header";
+import { Component } from "react";
+class App extends Component {
+  state = {
+    whichcomponenttoshow: "Counter",
+  };
+  render() {
+    if (this.state.whichcomponenttoshow === "Counter") {
+      return (
+        <div className="App">
+          <Counter />
+          <button
+            onClick={() => {
+              this.setState({
+                whichcomponenttoshow: "Header",
+              });
+            }}
+          >
+            Show header
+          </button>
+        </div>
+      );
+    } else if (this.state.whichcomponenttoshow === "Header") {
+      return (
+        <div className="App">
+          <Header />
+          <button
+            onClick={() => {
+              this.setState({
+                whichcomponenttoshow: "Counter",
+              });
+            }}
+          >
+            Show Counter
+          </button>
+        </div>
+      );
+    }
+  }
 }
 
 export default App;
